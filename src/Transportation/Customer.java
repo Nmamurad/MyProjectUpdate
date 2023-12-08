@@ -3,10 +3,48 @@ package Transportation;
 import java.util.Scanner;
 public class Customer extends Person {
     Scanner input = new Scanner(System.in);
+
+    Taxi t=new Taxi();
+    Bus b=new Bus();
         private String gender;
         private String address;
+        private String TaxiBus;
 
-        //customer behaivior
+
+
+    public void setTaxiBus() {
+        Boolean isBreak=false;
+do{
+        System.out.println("Do you Want Taxi or Bus?");
+        TaxiBus = input.next();
+
+
+            switch (TaxiBus.toLowerCase()) {
+                case "taxi":
+
+                    t.setCal();
+
+                    isBreak =true;
+                    break;
+                case "bus":
+
+                    b.setCal();
+                    b.Display();
+                    isBreak =true;
+                    break;
+                case "exit":
+                    System.out.println("Exiting the program.");
+                    break;
+                default:
+                    System.out.println("Sorry, what you Assigned Is Incorrect, Assign 'Taxi','Bus' or 'Exit'");
+                    break;
+            }
+        } while (!TaxiBus.equalsIgnoreCase("Exit")&& !isBreak);
+    }
+    public String getTaxiBus() {
+        return TaxiBus;
+    }
+
         public void setCostumer(String gender, String address, String name) {
 
             this.gender = gender;
@@ -26,31 +64,42 @@ public class Customer extends Person {
             return address;
         }
 
-        public void setAddress(String address) {
-            this.address = address;
-        }
+        public void setAddress(String Adress) {
+this.address=Adress;
+    }
 
         public void input() {
             super.input();
-            System.out.println("what is your gender");
-            gender = input.next();
-            switch (gender) {
-                case "female":
-                    gender.equalsIgnoreCase("female");
-                    break;
-                case "male":
-                    gender.equalsIgnoreCase("male");
-                    this.gender = gender;
-                    System.out.println("Where do you want to go?");
-                    address = super.input.next();
+            Boolean isBreak = false;
+            do {
+                System.out.println("What is your gender?");
+                gender = input.next();
 
-            }
+                switch (gender) {
+                    case "female":
+
+                        isBreak = true;
+                        break;
+                    case "male":
+                        isBreak = true;
+                        break;
+                    case "Exit":
+                        System.out.println("Exiting the program.");
+                        break;
+                    default:
+                        System.out.println("Sorry, what you Assigned Is Incorrect, Assign 'Female','Male' or 'Exit'");
+                        break;
+                }
+            } while (!gender.equalsIgnoreCase("Exit") && !isBreak);
+
+            System.out.println("Where do you want to go?");
+            address = input.next();
         }
 
         public void display() {
-            System.out.println("Name      gender       Address\n"
-                    +"-------    ------       ----------  \n"
-                    + super.getname() + "      " + getGender() + "       " +getAddress());
+            System.out.println("Name      Gender       Address\n"
+                    +"-------   ------      ----------  \n"
+                    + super.getname() + "       " + getGender() + "         " +getAddress());
 
         }
     }
