@@ -1,15 +1,25 @@
 package Transportation;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Customer extends Person {
     Scanner input = new Scanner(System.in);
-
+    ArrayList<Customer> customers = new ArrayList<Customer>();
     Taxi t=new Taxi();
     Bus b=new Bus();
         private String gender;
         private String address;
         private String TaxiBus;
 
+
+    public Customer(String name, String gender, String address, String TaxiBus) {
+        super(name);
+        this.gender=gender;
+        this.address=address;
+        this.TaxiBus=TaxiBus;
+        t.setCal();
+
+    }
 
 
     public void setTaxiBus() {

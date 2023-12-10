@@ -6,9 +6,7 @@ public class Main {
             ArrayList<Driver> drivers = new ArrayList<Driver>();
             ArrayList<Customer> customers = new ArrayList<Customer>();
             Scanner input = new Scanner(System.in);
-            Driver d = new Driver();
-            Customer c = new Customer();
-            Taxi t = c.t;
+
 
             Boolean isBreak7 = false;
             String option;
@@ -30,70 +28,69 @@ public class Main {
                             switch (option.toLowerCase()) {
                                 case "driver":
                                     System.out.println("What is your name?");
-                                   String name = input.next();
+                                    String name = input.next();
                                     System.out.println("What is your age?");
-                                   int age = input.nextInt();
+                                    int age = input.nextInt();
                                     System.out.println("What is your phone number?");
                                     int Ephoneno = input.nextInt();
                                     System.out.println("In which city do you live?");
                                     String location = input.next();
 
 
-
-                                Boolean isBreak2=false;
+                                    Boolean isBreak2 = false;
                                     String taxiBus;
-                                    do{
-                                    System.out.println("Do you have Taxi or Bus?");
-                                    taxiBus = input.next();
+                                    do {
+                                        System.out.println("Do you have Taxi or Bus?");
+                                        taxiBus = input.next();
 
-                                    switch (taxiBus.toLowerCase()) {
-                                        case "taxi":
-                                            System.out.println("What Veichle Brand do u have?");
-                                            String Brand=input.next();
-                                            System.out.println("What Veichle Model do u have?");
-                                            String Model=input.next();
-                                            System.out.println("What is the Year does your viechle Produced?");
-                                            int Year= input.nextInt();
-                                            if (Year>=2009)
-                                            Year=Year;
-                                            else
-                                                System.out.println("Sorry, Your Car  Model is not Acceptable, It have to be Above 2008");
-                                            System.out.println("What is the PLate Number of Your Viechle?");
-                                            int Plateno= input.nextInt();
-                                            isBreak2=true;
-                                            break;
-                                        case "bus":
-                                            System.out.println("What Veichle Brand do u have?");
-                                            Brand=input.next();
-                                            System.out.println("What Veichle Model do u have?");
-                                            Model=input.next();
-                                            System.out.println("What is the Year does your viechle Produced?");
-                                            Year= input.nextInt();
-                                            if (Year>=2009)
-                                            Year=Year;
-                                            else
-                                                System.out.println("Sorry, Your Car  Model is not Acceptable, It have to be Above 2008");
-                                            System.out.println("What is the PLate Number of Your Viechle?");
-                                            Plateno= input.nextInt();
+                                        switch (taxiBus.toLowerCase()) {
+                                            case "taxi":
+                                                System.out.println("What Veichle Brand do u have?");
+                                                String Brand = input.next();
+                                                System.out.println("What Veichle Model do u have?");
+                                                String Model = input.next();
+                                                System.out.println("What is the Year does your viechle Produced?");
+                                                int Year = input.nextInt();
+                                                if (Year >= 2009)
+                                                    Year = Year;
+                                                else
+                                                    System.out.println("Sorry, Your Car  Model is not Acceptable, It have to be Above 2008");
+                                                System.out.println("What is the PLate Number of Your Viechle?");
+                                                int Plateno = input.nextInt();
+                                                isBreak2 = true;
+                                                break;
+                                            case "bus":
+                                                System.out.println("What Veichle Brand do u have?");
+                                                Brand = input.next();
+                                                System.out.println("What Veichle Model do u have?");
+                                                Model = input.next();
+                                                System.out.println("What is the Year does your viechle Produced?");
+                                                Year = input.nextInt();
+                                                if (Year >= 2009)
+                                                    Year = Year;
+                                                else
+                                                    System.out.println("Sorry, Your Car  Model is not Acceptable, It have to be Above 2008");
+                                                System.out.println("What is the PLate Number of Your Viechle?");
+                                                Plateno = input.nextInt();
 
-                                            isBreak2=true;
-                                            break;
-                                        case "exit":
-                                            System.out.println("Exiting the program.");
-                                            break;
-                                        default:
-                                            System.out.println("Sorry, what you Assigned Is Incorrect, Assign 'Taxi','Bus' or 'Exit'");
-                                            break;
-                                    }
-                                } while (!taxiBus.equalsIgnoreCase("Exit")&& !isBreak2);
-                                 isBreak1=true;
-                                 break;
+                                                isBreak2 = true;
+                                                break;
+                                            case "exit":
+                                                System.out.println("Exiting the program.");
+                                                break;
+                                            default:
+                                                System.out.println("Sorry, what you Assigned Is Incorrect, Assign 'Taxi','Bus' or 'Exit'");
+                                                break;
+                                        }
+                                    } while (!taxiBus.equalsIgnoreCase("Exit") && !isBreak2);
+                                    isBreak1 = true;
+                                    break;
 
 
                                 case "customer":
                                     int cal;
                                     System.out.println("What is your name?");
-                                    name = input.next();
+                                    String Name = input.next();
 
                                     Boolean isBreak3 = false;
                                     String gender;
@@ -117,25 +114,26 @@ public class Main {
                                                 break;
                                         }
                                     } while (!gender.equalsIgnoreCase("Exit") && !isBreak3);
-
+                                    String TaxiBus;
                                     System.out.println("Where do you want to go?");
                                     String address = input.next();
 
-                                    Boolean isBreak4=false;
+                                    Boolean isBreak4 = false;
                                     int Seatno;
-                                    do{
+
+                                    do {
                                         System.out.println("Do you Want Taxi or Bus?");
-                                       String TaxiBus = input.next();
+                                        TaxiBus = input.next();
 
 
                                         switch (TaxiBus.toLowerCase()) {
                                             case "taxi":
-                                               Boolean isBreak5 = false;
-                                                do{
+                                                Boolean isBreak5 = false;
+                                                do {
                                                     System.out.println("Which Position do you want to choose 1.Front? or 2.Back?   (-The Price for Taxi (Front Position) >>>>>> 20,000IQD)\n" + "                                                           " + "(-The Price for Taxi (Back Position) >>>>>> 15,000IQD)");
                                                     int call = input.nextInt();
                                                     System.out.println("How many Seat Numbers do you want to take?");
-                                                     Seatno = input.nextInt();
+                                                    Seatno = input.nextInt();
                                                     switch (call) {
                                                         case 1:
                                                             if (Seatno > 0 && Seatno <= 1) {
@@ -144,40 +142,42 @@ public class Main {
                                                             } else {
                                                                 System.out.println("For 'Front Position' you can only Assign for ONE Person");
                                                             }
-                                                            isBreak5= true;
+                                                            isBreak5 = true;
                                                             break;
                                                         case 2:
                                                             if (Seatno > 0 && Seatno <= 3) {
                                                                 cal = 15;
-                                                                 cal = Seatno * cal;
+                                                                cal = Seatno * cal;
                                                             } else {
                                                                 System.out.println("For 'Back Position' you can only Assign for THREE Person");
-                                                            } isBreak5 = true;
+                                                            }
+                                                            isBreak5 = true;
                                                             break;
                                                         default:
                                                             System.out.println("The option you Choosed is Incorrect Please Try Again");
-                                                    }}while(Seatno > 0 && Seatno <= 3&&!isBreak5);
-                                                isBreak4 =true;
+                                                    }
+                                                } while (Seatno > 0 && Seatno <= 3 && !isBreak5);
+                                                isBreak4 = true;
                                                 break;
 
                                             case "bus":
+                                                Boolean isBreak6 = false;
                                                 do {
                                                     System.out.println("How many Seat Numbers do you want to take?");
-                                                     Seatno = input.nextInt();
-                                                    if (Seatno > 0 && Seatno <= 21) {
+                                                    int SeatnoB = input.nextInt();
+                                                    if (SeatnoB > 0 && SeatnoB <= 21) {
                                                         cal = 5;
-                                                        cal = Seatno * cal;
+                                                        cal = SeatnoB * cal;
                                                     } else {
                                                         System.out.println("The number you Assigned is Incoerrect we only have 21 seats");
                                                     }
-
+                                                    isBreak6 = true;
                                                     break;
 
 
-                                                } while (  Seatno>0 &&Seatno <= 21 );
-                                        }
+                                                } while (Seatno > 0 && Seatno <= 21 && !isBreak6);
 
-                                                isBreak4 =true;
+                                                isBreak4 = true;
                                                 break;
                                             case "exit":
                                                 System.out.println("Exiting the program.");
@@ -186,9 +186,8 @@ public class Main {
                                                 System.out.println("Sorry, what you Assigned Is Incorrect, Assign 'Taxi','Bus' or 'Exit'");
                                                 break;
                                         }
-                                    } while (!TaxiBus.equalsIgnoreCase("Exit")&& !isBreak4);
-                            }
-                                    isBreak = true;
+                                    } while (!TaxiBus.equalsIgnoreCase("Exit") && !isBreak4);
+                                    isBreak1 = true;
                                     break;
                                 case "exit":
                                     System.out.println("Exiting the program.");
@@ -196,16 +195,17 @@ public class Main {
                                 default:
                                     System.out.println("Invalid option. Please enter 'Driver', 'Customer', or 'exit'.");
                                     break;
+                            //Customer newC = new Customer( name,gender,address,TaxiBus);
+                            //customers.add(newC);
                             }
-                        } while (!option.equalsIgnoreCase("exit") && !isBreak7);
+                        } while (!option.equalsIgnoreCase("exit") && !isBreak1);
 
 
+                   // System.out.println("Employee added successfully!");
 
-
-
-
+/*
                     case 2:
-                        Boolean isBreak1 = false;
+                        Boolean isBreak8 = false;
                         do {
                             System.out.println("Have you Choosed a Driver or Customer");
                             option = input.next();
@@ -218,21 +218,21 @@ public class Main {
                                             + super.getname() + "         " + getIdcard() + "        " + getAge() + "         " + getEphoneno() + "              " + getLocation() + "            " + getTaxiBus());
                                     System.out.println("This is the Information about the Viechle you assigned \n");
                                     System.out.print("Brand         Model         Year        Plate No.      \n"
-                                            +       "--------     --------      ------      -----------   \n "
-                                            + getBrand() + "         " +getModel() + "          " +getYear() + "           " +getPlateno());
+                                            + "--------     --------      ------      -----------   \n "
+                                            + getBrand() + "         " + getModel() + "          " + getYear() + "           " + getPlateno());
 
-                                    isBreak1 = true;
+                                    isBreak8 = true;
                                     break;
                                 case "customer":
 
                                     System.out.println("This is the Information you assigned");
                                     System.out.println("Name      Gender       Address\n"
-                                            +"-------   ------      ----------  \n"
-                                            + super.getname() + "       " + getGender() + "         " +getAddress());
+                                            + "-------   ------      ----------  \n"
+                                            + super.getname() + "       " + getGender() + "         " + getAddress());
                                     System.out.println("-You Choosed 'Taxi'");
                                     System.out.println("We have 4 positions to Fill According to our customers who assigns sooner ");
-                                    System.out.println("\t\tYour Price Is"+"  >>>>>  "+getCal() +",000IQD");
-                                    isBreak1 = true;
+                                    System.out.println("\t\tYour Price Is" + "  >>>>>  " + getCal() + ",000IQD");
+                                    isBreak8 = true;
                                     break;
                                 case "exit":
                                     System.out.println("Exiting the program.");
@@ -241,20 +241,20 @@ public class Main {
                                     System.out.println("Invalid option. Please enter 'Driver', 'Customer', or 'exit'.");
                                     break;
                             }
-                        } while (!option.equalsIgnoreCase("exit") && !isBreak1);
+                        } while (!option.equalsIgnoreCase("exit") && !isBreak8);
                         break;
                     case 3:
+                    */
+
                     case 5:
                         System.out.println("Exiting the program.");
                         break;
-                }
-
-                }while (option1 != (5) && !isBreak);
-
+                }}while (option1 != (5) && !isBreak7);
+}
             }
 
 
-        }
+
 
 
 
